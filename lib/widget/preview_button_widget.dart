@@ -8,8 +8,7 @@ class PreviewButtonWidget extends StatelessWidget {
   final String? previewLink;
 
   const PreviewButtonWidget(
-      {Key? key, required this.volumeId, this.availability, this.title, this.previewLink})
-      : super(key: key);
+      {super.key, required this.volumeId, this.availability, this.title, this.previewLink});
 
   @override
   Widget build(BuildContext context) {
@@ -19,12 +18,12 @@ class PreviewButtonWidget extends StatelessWidget {
         ElevatedButton(
             style: ElevatedButton.styleFrom(
                 fixedSize: const Size(120, 20), backgroundColor: Colors.green[600]),
-            child: const Text('Read book'),
             onPressed: availability!
                 ? () {
-              launch(this.previewLink!);
+              launch(previewLink!);
             }
-                : null),
+                : null,
+            child: const Text('Read book')),
       ],
     );
   }

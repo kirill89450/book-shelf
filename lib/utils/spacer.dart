@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class HorizontalSpace extends StatelessWidget {
   final double w;
 
-  const HorizontalSpace({Key? key, required this.w}) : super(key: key);
+  const HorizontalSpace({super.key, required this.w});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class HorizontalSpace extends StatelessWidget {
 class VerticalSpace extends StatelessWidget {
   final double h;
 
-  const VerticalSpace({Key? key, required this.h}) : super(key: key);
+  const VerticalSpace({super.key, required this.h});
 
   @override
   Widget build(BuildContext context) {

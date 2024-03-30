@@ -76,7 +76,7 @@ class CustomListTile extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        ('by ' + (author ?? 'Not available')),
+                        ('by ${author ?? 'Not available'}'),
                         style: const TextStyle(
                           fontSize: 10.0,
                           color: Colors.grey,

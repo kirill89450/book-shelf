@@ -6,8 +6,7 @@ import 'package:readmore/readmore.dart';
 import 'package:intl/intl.dart';
 
 class BookDetailsPage extends StatelessWidget {
-  const BookDetailsPage({Key? key, required this.book, this.fav})
-      : super(key: key);
+  const BookDetailsPage({super.key, required this.book, this.fav});
   final Book book;
   final String? fav;
 
@@ -39,12 +38,11 @@ class BookDetailsPage extends StatelessWidget {
 
 class _Details extends StatelessWidget {
   const _Details({
-    Key? key,
     required this.item,
     required this.date,
     required this.fav,
     required this.docId,
-  }) : super(key: key);
+  });
 
   final Book item;
   final String date;
@@ -74,16 +72,16 @@ class _Details extends StatelessWidget {
                           Center(
                             child: Text(
                               (item.pageCount != 'null'
-                                  ? (item.pageCount! + ' pages\n\n')
+                                  ? ('${item.pageCount!} pages\n\n')
                                   : '') +
                                   (item.publishedDate != null
-                                      ? 'Published ' + date
+                                      ? 'Published $date'
                                       : '') +
                                   (item.publisher != null
-                                      ? '\nby ' + item.publisher!
+                                      ? '\nby ${item.publisher!}'
                                       : '') +
                                   (item.isbn13 != null
-                                      ? '\n\nISBN: ' + item.isbn13!
+                                      ? '\n\nISBN: ${item.isbn13!}'
                                       : ''),
                               textAlign: TextAlign.center,
                               style: const TextStyle(color: Colors.white),
@@ -100,14 +98,14 @@ class _Details extends StatelessWidget {
                         children: List.generate(
                           2,
                               (index) {
-                            final _color = index == 0 ? Colors.white : Colors.grey;
+                            final color = index == 0 ? Colors.white : Colors.grey;
                             return Padding(
                               padding:
                               const EdgeInsets.symmetric(horizontal: 2.0),
                               child: Icon(
                                 Icons.circle,
                                 size: 10,
-                                color: _color,
+                                color: color,
                               ),
                             );
                           },
@@ -141,7 +139,7 @@ class _Details extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      ('by ' + (item.authors ?? 'Not available')),
+                      ('by ${item.authors ?? 'Not available'}'),
                       textAlign: TextAlign.center,
                       style: const TextStyle(
                         fontSize: 14.0,
@@ -204,8 +202,7 @@ class _Details extends StatelessWidget {
                           ],
                         ),
                         Text(
-                          ((item.ratingCount?.toString() ?? '0 ') +
-                              ' ratings '),
+                          '${item.ratingCount?.toString() ?? '0 '} ratings ',
                           style: TextStyle(
                             fontSize: 14,
                             color: Colors.grey[600],
@@ -226,7 +223,7 @@ class _Details extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         PreviewButtonWidget(
-                          volumeId: item.isbn13!,
+                          volumeId: item.isbn13 ?? '',
                           availability: true,
                           title: item.title,
                           previewLink: item.previewLink,
@@ -271,7 +268,7 @@ class _Details extends StatelessWidget {
                         item.description ?? '',
                         trimLines: 10,
                         colorClickableText: Colors.deepOrange,
-                        trimMode: TrimMode.Line,
+                        // trimMode: TrimMode.Line,
                         trimCollapsedText: 'read more',
                         trimExpandedText: 'read less',
                         style: const TextStyle(
@@ -293,8 +290,7 @@ class _Details extends StatelessWidget {
 
 class HalfFilledIcon extends StatelessWidget {
   const HalfFilledIcon(
-      {Key? key, required this.icon, required this.size, required this.color})
-      : super(key: key);
+      {super.key, required this.icon, required this.size, required this.color});
 
   final IconData icon;
   final double size;
