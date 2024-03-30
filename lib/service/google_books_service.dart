@@ -5,14 +5,12 @@ import 'package:book_shelf/model/google_books.dart';
 import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
-import '../model/book.dart';
-import '../model/google_books.dart';
 
 class GoogleBooksService {
 
   Future<List<Book>> getBooks(String url, String index, String max) async {
     final uri = Uri.https('books.googleapis.com', '/books/v1/volumes', {
-      'q': 'intitle:' + url + '|inauthor:' + url,
+      'q': 'intitle:$url|inauthor:$url',
       'startIndex': index,
       'maxResults': max,
       'fields=': 'totalItems,items(volumeInfo(title,publisher,authors,categories,'
@@ -62,4 +60,5 @@ class GoogleBooksService {
     }
     return [Book(totalItems: 0)];
   }
+
 }

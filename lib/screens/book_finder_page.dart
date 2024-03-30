@@ -4,17 +4,16 @@ import 'package:book_shelf/model/book.dart';
 import 'package:book_shelf/service/google_books_provider.dart';
 import 'package:book_shelf/widget/book_list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:provider/provider.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../utils/spacer.dart';
 
 class BookFinderPage extends StatefulWidget {
-  const BookFinderPage({Key? key}) : super(key: key);
+  const BookFinderPage({super.key});
 
   @override
-  _BookFinderPageState createState() => _BookFinderPageState();
+  State<BookFinderPage> createState() => _BookFinderPageState();
 }
 
 class _BookFinderPageState extends State<BookFinderPage> {

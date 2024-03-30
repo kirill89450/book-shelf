@@ -3,14 +3,14 @@ import 'package:book_shelf/service/google_books_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class SearchResultsPage extends StatelessWidget {
-  const SearchResultsPage({super.key, required this.query});
+class BookPageWidget extends StatelessWidget {
+  const BookPageWidget({super.key, required this.query});
   final String query;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(title: const Text('Никита гей'),centerTitle: true,),
       body: ChangeNotifierProvider<GoogleBooksProvider>(
         create: (BuildContext context) {
           return GoogleBooksProvider(query);

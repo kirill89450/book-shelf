@@ -1,27 +1,5 @@
-abstract class MapConvertible {
-  // Map<dynamic, dynamic> toMap();
 
-  MapConvertible fromMap(Map<dynamic, dynamic> map);
-}
-
-class Book extends MapConvertible {
-  Book({
-    this.title,
-    this.authors,
-    this.isbn13,
-    this.thumbnailUrl,
-    this.categories,
-    this.averageRating,
-    this.totalItems,
-    this.ratingCount,
-    this.description,
-    this.pageCount,
-    this.publishedDate,
-    this.publisher,
-    this.infoLink,
-    this.embeddable,
-    this.previewLink,
-  });
+class Book{
 
   final String? title;
   final String? authors;
@@ -39,8 +17,21 @@ class Book extends MapConvertible {
   final bool? embeddable;
   final String? previewLink;
 
-  @override
-  Book fromMap(Map map) {
-    return Book(isbn13: map['isbn']);
-  }
+  Book({
+    this.title,
+    this.authors,
+    this.isbn13,
+    this.thumbnailUrl,
+    this.categories,
+    this.averageRating,
+    this.totalItems,
+    this.ratingCount,
+    this.description,
+    this.pageCount,
+    this.publishedDate,
+    this.publisher,
+    this.infoLink,
+    this.embeddable,
+    this.previewLink,
+  });
 }

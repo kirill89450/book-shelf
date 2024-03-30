@@ -3,7 +3,10 @@ class GoogleBooks {
 
   final List<Item> items;
 
-  GoogleBooks({required this.items, required this.totalItems});
+  GoogleBooks({
+    required this.items,
+    required this.totalItems
+  });
 
   factory GoogleBooks.fromJson(Map<String, dynamic> parsedJson) {
     var list = parsedJson['items'] as List;
