@@ -21,9 +21,11 @@
 
     void getResults(String url, int index, int max) async {
       setLoading(true);
+      if(url == '') url = ' ';
       List<Book> result = await googleBooksService!
           .getBooks(url, _index.toString(), max.toString());
-      _item.addAll(result);
+      _item = result;
+      notifyListeners();
       indexIncrement();
       setLoading(false);
     }
